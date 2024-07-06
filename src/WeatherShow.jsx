@@ -18,7 +18,10 @@ export default function WeatherShow() {
       const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=guwahati&appid=b3c89b0ed5e668bbc283a8a23698afdc&units=metric`)
       const data = await response.json() 
       if (data) {
-        setCurrentWeatherData(data)
+        const{name, main: {temp, feels_like, pressure, humidity}, weather : [{icon, description}],wind: {speed}} = data
+
+        const filteredCurrentData = {name,temp,feels_like, pressure, humidity, icon, description,speed}
+        setCurrentWeatherData(filteredCurrentData)
       }
     } catch (e) {    
      console.log("halllla")
@@ -45,11 +48,17 @@ export default function WeatherShow() {
 
 
   useEffect(()=>{
-    // fetchCurrentWeatherData();
-      setCurrentWeatherData(Zdata)
+    fetchCurrentWeatherData();
 
-      setHourlyData(hourdata)
-      // fetchHourlyData();
+      // const{name, main: {temp, feels_like, pressure, humidity}, weather : [{icon, description}],wind: {speed}} = Zdata
+
+      // const kipu = {name,temp,feels_like, pressure, humidity, icon, description,speed}
+    
+
+      // setCurrentWeatherData(kipu)
+
+      // setHourlyData(hourdata)
+      fetchHourlyData();
 
       // console.log(Zdata)
       // console.log("=======", hourdata.list)
@@ -60,11 +69,11 @@ export default function WeatherShow() {
 
   return (
     <div className="main-container">
-      { currentWeatherData.weather &&
+      { currentWeatherData.name&&
         <div className="weather-container">
         <WeatherToday 
           currentWeatherData = {currentWeatherData}
-          currenHourData = {hourlyData}
+          hourlyData = {hourlyData}
         />
         <DayForecast hourlyData = {hourlyData} />
         </div>}

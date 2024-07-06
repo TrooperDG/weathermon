@@ -1,4 +1,6 @@
-import suncloud from "../assets/images/sunnycloud.svg"
+// import suncloud from "../assets/images/CA9649A0.png"
+import useIcon from "../utilities/useIcon"
+
 
 export default function DayForecast({hourlyData}) {
   // console.log(hourlyData)
@@ -41,7 +43,7 @@ export default function DayForecast({hourlyData}) {
           <section key={index} className="weather-forecast-details">
             <div className="weather-forecast-day">{ index === 0 ? 'Today' : day}</div>
             <div className="weather-forecast-description">
-                <img src={suncloud} alt="" className="weather-forecast-image" />
+                <img src={useIcon(icon)} alt="" className="weather-forecast-image" />
                 <p className="weather-forecast-status">{description}</p>
             </div>
             <div className="weather-forecast-minmax-temp">{temp_max}/<span>{temp_min}</span> </div>

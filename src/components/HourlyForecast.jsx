@@ -1,6 +1,8 @@
-import suncloud from "../assets/images/sunnycloud.svg"
+// import suncloud from "../assets/images/CA9649A0.png"
+import useIcon from "../utilities/useIcon"
 
-export default function HourlyForecast({ currenHourData }) {
+export default function HourlyForecast({ hourlyData }) {
+
 
   // console.log(currenHourData[0].dt_txt)
 
@@ -14,19 +16,19 @@ export default function HourlyForecast({ currenHourData }) {
 
         <div className="hourly-forecast-details-container">
 
-          {currenHourData && currenHourData.slice(1, 10).map((item, index) => (
+          {hourlyData && hourlyData.slice(1, 10).map(({dt_txt,icon,temp}, index) => (
            
             <div key={index} className="hourly-forecast-details">
               <section className="hourly-forecast-section">
                 <div className="hourly-forecast-time">
-                  {new Date(item.dt_txt).getHours()}:00 AM
+                  {new Date(dt_txt).getHours()}:00 AM
                 </div>
                 <img
                   className="hourly-forecast-image"
-                  src={suncloud}
+                  src={useIcon(icon)}
                   alt="image"
                 />
-                <div className="hourly-forecast-temparature">{Math.trunc(item.temp)}°</div>
+                <div className="hourly-forecast-temparature">{Math.trunc(temp)}°</div>
               </section>
             </div>
           ))}

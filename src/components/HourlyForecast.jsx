@@ -21,7 +21,8 @@ export default function HourlyForecast({ hourlyData }) {
             <div key={index} className="hourly-forecast-details">
               <section className="hourly-forecast-section">
                 <div className="hourly-forecast-time">
-                  {new Date(dt_txt).getHours()}:00 AM
+                  {(new Date(dt_txt).getHours() %12 || 12)}:00 
+                  {new Date(dt_txt).getHours() >=12 ? "PM" : "AM"}
                 </div>
                 <img
                   className="hourly-forecast-image"

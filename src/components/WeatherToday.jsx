@@ -4,8 +4,7 @@ import WeatherCurrent from "./WeatherCurrent";
 import WeatherSearch from "./WeatherSearch";
 
 
-export default function CurrentWeather({currentWeatherData, hourlyData }){
-
+export default function CurrentWeather({currentWeatherData, hourlyData,handleSearch }){
 
 
     // const{name, main: {temp, feels_like, pressure, humidity}, weather : [{icon, description}],wind: {speed}} = currentWeatherData
@@ -17,7 +16,9 @@ export default function CurrentWeather({currentWeatherData, hourlyData }){
     return(
         <div className="weather-today">
 
-            <WeatherSearch />
+            <WeatherSearch 
+               handleSearch = {handleSearch}
+            />
             <WeatherCurrent 
                 currentWeatherData = {currentWeatherData}
             />

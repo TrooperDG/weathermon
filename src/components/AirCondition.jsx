@@ -6,7 +6,7 @@ export default function AirCondition({currentWeatherData}){
 
     return(
         <div className="air-condition">
-            <h3  className="air-condition-title">AIR CONDITION</h3>
+            <h3  className="air-condition-title title-font">AIR CONDITION</h3>
             <div className="air-conditon-container">
                 <div className="air-conditon-tab">
                     Real feel {Math.trunc(feels_like)}°

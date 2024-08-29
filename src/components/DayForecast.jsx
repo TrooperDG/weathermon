@@ -35,7 +35,7 @@ export default function DayForecast({hourlyData}) {
   return (
     <div className="weather-forecast">
       
-      <h3 className="weather-forecast-title">5-DAY FORECAST</h3>
+      <h3 className="weather-forecast-title title-font">5-DAY FORECAST</h3>
       <div className="weather-forecast-container">
 
         {Array.from(dailyForecast).map(([day, {temp_min, temp_max, icon, description}], index) => 

@@ -3,8 +3,8 @@ import WeatherShow from "./WeatherShow"
 
 export default function App() {
   return (
-    <div>
+    <>
       <WeatherShow />
-    </div>
+    </>
   )
 }

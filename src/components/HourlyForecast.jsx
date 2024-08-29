@@ -11,15 +11,11 @@ export default function HourlyForecast({ hourlyData }) {
 
   return (
     <div className="hourly-forecast">
-      <div className="hourly-forecast-container">
-        <h4 className="hourly-forecast-title">TODAY'S FORECAST</h4>
-
+        <h4 className="hourly-forecast-title title-font">TODAY'S FORECAST</h4>
         <div className="hourly-forecast-details-container">
 
           {hourlyData && hourlyData.slice(1, 10).map(({dt_txt,icon,temp}, index) => (
-           
-            <div key={index} className="hourly-forecast-details">
-              <section className="hourly-forecast-section">
+              <section key={index}  className="hourly-forecast-details">
                 <div className="hourly-forecast-time">
                   {(new Date(dt_txt).getHours() %12 || 12)}:00 
                   {new Date(dt_txt).getHours() >=12 ? "PM" : "AM"}
@@ -31,7 +27,7 @@ export default function HourlyForecast({ hourlyData }) {
                 />
                 <div className="hourly-forecast-temparature">{Math.trunc(temp)}°</div>
               </section>
-            </div>
+            
           ))}
 
 
@@ -97,7 +93,7 @@ export default function HourlyForecast({ hourlyData }) {
             </section>
           </div> */}
         </div>
-      </div>
+      
     </div>
   )
 }

@@ -21,7 +21,7 @@ export default function WeatherSearch({handleSearch}){
             <input 
                     className="search-input" 
                     type="text" 
-                    placeholder="search" 
+                    placeholder="Search city" 
                     onChange={handleChange}
                 />
            </form>

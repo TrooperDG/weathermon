@@ -15,6 +15,12 @@
     --primary-text-color: #b3b8bc;
     --secondary-text-color: #8ea9be;
     --secondary-accent-color: #606570; 
+    --header-font-size: 0.75rem;
+    --font-size-1 : 0.8rem;
+    --font-size-2 : 1.4rem;
+    --font-main : 1.7rem;
+    --font-main-temp : 2.5rem;
+    --search-font: 1rem;
 }
 
 body{
@@ -25,6 +31,10 @@ body{
     justify-content: center;
     align-items: center;
   
+}
+.title-font{
+    font-size: var(--header-font-size);
+    color: #8ea9be;
 }
 
 
@@ -40,10 +50,12 @@ body{
     gap: 1rem;
     padding: 1.5rem;
     border-radius: 22px;
+    
+    /* min-width: 90%; */
 }
 .weather-today{
     /* background-color: brown; */
-    width: min(33rem, 70vw);
+    width: min(33rem, 80vw);
     
 }
 
@@ -54,7 +66,7 @@ body{
     
 }
 .search-input{
-    font-size: 1rem;
+    font-size: var(--search-font);
     width: 100%;
     padding: 0.4em 1em;
     border-radius: 10px;
@@ -83,20 +95,20 @@ body{
 }
 .current-weather-city{
     font-weight: 600;
-    font-size: 1.7rem;
+    font-size: var(--font-main);
 }
 .current-weather-description{   
-    font-size: 0.8rem;
+    font-size: var(--font-size-1);
     color: #8ba5bc;
 }
 .current-weather-temparature{
     font-weight: 600;
-    font-size: 2.5rem;
+    font-size: var(--font-main-temp);
     margin-top: 0.8em;
 }
 .current-weather-image{
     /* width: 160px; */
-    width: 30%;
+    width: min(26vw, 10rem);
    
 }
 
@@ -109,10 +121,7 @@ body{
     padding: 1.2rem 2rem;
     border-radius: 14px;
 }
-.title-font{
-    font-size: 0.75rem;
-    color: #8ea9be;
-}
+
 .hourly-forecast-details-container{
     display: flex;
     flex-wrap: nowrap;
@@ -132,14 +141,16 @@ body{
     border: none;
 }
 .hourly-forecast-time{
-    font-weight: 500;
+    font-weight: 600;
+    font-size: var(--font-size-1);
+    color: #b3b8bc;
 }
 .hourly-forecast-image{
     width: 3rem;
     margin: 0.8rem  0;
 }
 .hourly-forecast-temparature{
-    font-size: 1.4rem;
+    font-size: var(--font-size-2);
     font-weight: 600;
 }
 
@@ -160,14 +171,16 @@ body{
     border-radius: 14px;    
 }
 .air-conditon-container{
-    padding: 1rem 1rem;
+    padding: 1rem 0rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 2rem;
     row-gap: 2.2rem;
 }
 .air-conditon-tab{
-    font-size: 1rem;
+    font-size: var(--font-size-1);
+    font-weight: 600;
+    color: #b3b8bc;
 }
 
 /* ////////////////////////////////////////////// */
@@ -176,15 +189,16 @@ body{
     background-color: var(--accent-color);
     border-radius: 14px;
     /* width: 20rem; */
-    width: min(100%, 70vw);
-    padding: 1.5rem;
+    width: min(100%, 80vw);
+    padding: 1.5rem 2rem;
     padding-bottom: 1rem;
 }
 
 .weather-forecast-details{
     height: 6.2rem; 
     display: grid;
-    grid-template-columns: 1.3fr 2fr 1.2fr;
+    grid-template-columns: 1.3fr 2fr 0.5fr;
+    gap: 1rem;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid var(--secondary-accent-color);
@@ -195,7 +209,7 @@ body{
 }
 .weather-forecast-day{
     text-wrap:nowrap ;
-    font-size: 0.8rem;
+    font-size: var(--font-size-1);
     font-weight: 600;
     color: #b3b8bc;
     
@@ -205,22 +219,22 @@ body{
     align-items: center;
 }
 .weather-forecast-image{
-    width: 36px;
+    width: 2.2rem;
 }
  
 .weather-forecast-status{
-     margin-left: 10px;
-     font-size: 12px;
+     margin-left: 0.3rem;
+     font-size: var(--font-size-1);
      font-weight: 500;
      color: #dcdbdb;
 }
 .weather-forecast-minmax-temp{
-     font-size: 1rem;
+     font-size: var(--search-font);
      font-weight: 500;
      color: #ffffff;
 }
 .weather-forecast-minmax-temp> span{
-     font-size: 1rem;
+     font-size: var(--search-font);
      font-weight: 500;
      color: #b3b8bc;
 }
@@ -230,10 +244,45 @@ body{
 @media (max-Width: 1000px )  {
     .weather-container{
         display: block;
-        margin: 2rem;
+        margin: 1rem 0;
     }
     .weather-forecast{
         margin-top: 1rem;
     }
    
+}
+
+@media (width <= 640px){
+   :root{
+        --header-font-size: 0.5rem;
+        --font-size-1 : 0.6rem;
+        --font-size-2 : 1rem;
+        --font-main : 1.5rem;
+        --search-font: 0.75rem;
+        --font-main-temp : 2rem;
+   }
+   .current-weather{
+        padding: 2rem 1.5rem;
+    }
+
+   .hourly-forecast-image{
+        width: 2.2rem;
+        margin: 0.8rem  0;
+    }
+
+    .air-conditon-container{
+        padding: 1rem 0rem;
+        column-gap: 1rem;
+        row-gap: 1.2rem;
+    }
+    .air-condition{
+        padding: 1.2rem 1.5rem; 
+        padding-bottom: 0.6rem;
+    }
+    .hourly-forecast{
+        padding: 1.2rem 1.5rem;
+        
+    }
+   
+  
 }

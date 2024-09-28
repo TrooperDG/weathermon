@@ -73,16 +73,16 @@ export default function WeatherShow() {
 
 
   useEffect(()=>{
-    // getBrowserGeolocationForcast()
+    getBrowserGeolocationForcast()
 
    
       // fetchCurrentWeatherData();
       // fetchHourlyData({lon , lat});
 
-      const{name, main: {temp, feels_like, pressure, humidity}, weather : [{icon, description}],wind: {speed}} = Zdata
-      const kipu = {name,temp,feels_like, pressure, humidity, icon, description,speed}
-      setCurrentWeatherData(kipu)
-      setHourlyData(hourdata)
+      // const{name, main: {temp, feels_like, pressure, humidity}, weather : [{icon, description}],wind: {speed}} = Zdata
+      // const kipu = {name,temp,feels_like, pressure, humidity, icon, description,speed}
+      // setCurrentWeatherData(kipu)
+      // setHourlyData(hourdata)
       
   },[])
 

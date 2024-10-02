@@ -1,8 +1,5 @@
 
 import { useEffect, useState } from "react"
-import useFetch from "./utilities/useFetch.js"
-import {Zdata} from "./utilities/dataC"
-import { hourdata } from "./utilities/datah"
 import WeatherToday from "././components/WeatherToday"
 import DayForecast from "./components/DayForecast"
 import "./styles.css"
@@ -74,16 +71,7 @@ export default function WeatherShow() {
 
   useEffect(()=>{
     getBrowserGeolocationForcast()
-
-   
-      // fetchCurrentWeatherData();
-      // fetchHourlyData({lon , lat});
-
-      // const{name, main: {temp, feels_like, pressure, humidity}, weather : [{icon, description}],wind: {speed}} = Zdata
-      // const kipu = {name,temp,feels_like, pressure, humidity, icon, description,speed}
-      // setCurrentWeatherData(kipu)
-      // setHourlyData(hourdata)
-      
+  
   },[])
 
 

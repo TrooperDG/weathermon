@@ -17,7 +17,7 @@ export default function AirCondition({currentWeatherData}){
                     Humidity {humidity}%
                 </div>
                 <div className="air-conditon-tab">
-                    <svg className="air-condition-icon" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-180q-91.54 0-155.77-64.23T260-400h60q0 66 47 113t113 47q66 0 113-47t47-113h60q0 91.54-64.23 155.77T480-180Zm0-180.62L333.85-506.77 376-549.54l74 74v-260.61h60v260.61l74-74 42.15 42.77L480-360.62Z"/></svg>
+                    <svg className="air-condition-icon" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M180-140v-60h600v60H180Zm300-153.85L293.85-480 336-522.15l114 114V-820h60v411.85l114-114L666.15-480 480-293.85Z"/></svg>
                     Pressure {pressure}mbar
                 </div>
                 <div className="air-conditon-tab">

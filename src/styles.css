@@ -254,12 +254,16 @@ body{
 
 @media (width <= 640px){
    :root{
-        --header-font-size: 0.5rem;
-        --font-size-1 : 0.6rem;
+        --header-font-size: 0.6rem;
+        --font-size-1 : 0.7rem;
         --font-size-2 : 1rem;
-        --font-main : 1.5rem;
-        --search-font: 0.75rem;
+        --font-main : 1.8rem;
+        --search-font: 0.9rem;
         --font-main-temp : 2rem;
+   }
+   body{
+    background-image: none;
+    background-color: #131b27;
    }
    .weather-container{
         margin: 0;
